@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/bg_gr_splash"/>
+
+    <item android:gravity="fill"
+        android:drawable="@drawable/ic_rizigo_splash_2_1"/>
+
+    <item android:gravity="center_vertical|center_horizontal"
+        android:drawable="@drawable/ic_parking_1"/>
+    
+</layer-list>
