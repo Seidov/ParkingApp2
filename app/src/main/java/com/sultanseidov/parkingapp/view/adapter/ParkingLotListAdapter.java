@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sultanseidov.parkingapp.R;
@@ -49,6 +50,10 @@ public class ParkingLotListAdapter extends RecyclerView.Adapter<ParkingLotListAd
         holder.textDistance.setText(modelList.get(position).getDistance());
 
         holder.textFreeArea.setText(modelList.get(position).getFreeArea());
+
+        holder.itemView.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_parkingLotDetailsFragment);
+        });
 
     }
 

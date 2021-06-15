@@ -1,5 +1,6 @@
 package com.sultanseidov.parkingapp.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.sultanseidov.parkingapp.R;
 import com.sultanseidov.parkingapp.model.UserModel;
 import com.sultanseidov.parkingapp.util.sharedPreference.SaveSharedPreference;
 import com.sultanseidov.parkingapp.util.Util;
+import com.sultanseidov.parkingapp.view.activity.MainActivity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -113,14 +115,13 @@ public class SignUpFragment extends Fragment {
 
                 SaveSharedPreference.setLoggedIn(view.getContext(), true);
                 SaveSharedPreference.setUser(requireContext(), gson.toJson(userModel));
-                Toast.makeText(view.getContext(), "Yeni kullanici basariylakaydedildi", Toast.LENGTH_SHORT).show();
 
-                Navigation.findNavController(v).navigate(R.id.action_signUpFragment_pop);
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+                requireActivity().finish();
+
 
             }
-
-
-            Toast.makeText(view.getContext(), "Yeni kullanici basariylakaydedildi", Toast.LENGTH_SHORT).show();
 
 
         });

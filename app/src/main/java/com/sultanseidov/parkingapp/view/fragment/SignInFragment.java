@@ -67,23 +67,22 @@ public class SignInFragment extends Fragment {
                         if (user.getUserName().toString().equals(textViewUserName.getText().toString()) &&
                                 user.getPassword().toString().equals(textViewUserPassword.getText().toString())){
 
-                            Toast.makeText(view.getContext(), "Giris basarili", Toast.LENGTH_SHORT).show();
                             SaveSharedPreference.setLoggedIn(view.getContext(), true);
-
-
-
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             startActivity(intent);
                             requireActivity().finish();
+                        }else {
+                            Toast.makeText(view.getContext(), "The password that you've entered is incorrect.", Toast.LENGTH_SHORT).show();
+
                         }
 
                     }else {
-                        Toast.makeText(view.getContext(), "Kayıtlı kullanıcı bulunamadı!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(view.getContext(), "The email address or mobile number you entered isn't connected to an account.", Toast.LENGTH_SHORT).show();
                     }
 
 
                 }catch (Exception e){
-                    Toast.makeText(view.getContext(), ""+e, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(view.getContext(), ""+e, Toast.LENGTH_SHORT).show();
                 }
             }
 

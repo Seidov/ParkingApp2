@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -31,7 +32,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     View view;
-    TextView textViewLogout;
+    LinearLayout linearLogout;
     HomeViewModel viewModel;
     TextView textErrorMessage;
     ProgressBar progressBar;
@@ -49,7 +50,7 @@ public class HomeFragment extends Fragment {
 
     private void initUIComponent() {
         textErrorMessage=view.findViewById(R.id.errorMessage);
-        textViewLogout=view.findViewById(R.id.textViewLogout);
+        linearLogout=view.findViewById(R.id.linearLogout);
         progressBar=view.findViewById(R.id.progressBar);
         rcvParkingLotList=view.findViewById(R.id.rcvParkingLotList);
     }
@@ -62,7 +63,7 @@ public class HomeFragment extends Fragment {
         viewModel.refreshParkingLotListModelData();
         observerParkingLotListViewModel();
 
-        textViewLogout.setOnClickListener(v ->{
+        linearLogout.setOnClickListener(v ->{
             SaveSharedPreference.setLoggedIn(requireContext(),false);
             Intent intent = new Intent(getActivity(), RegisterActivity.class);
             startActivity(intent);

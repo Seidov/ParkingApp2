@@ -9,5 +9,19 @@
         android:id="@+id/homeFragment"
         android:name="com.sultanseidov.parkingapp.view.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_parkingLotDetailsFragment"
+            app:destination="@id/parkingLotDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parkingLotDetailsFragment"
+        android:name="com.sultanseidov.parkingapp.view.fragment.ParkingLotDetailsFragment"
+        android:label="fragment_parking_lot_details"
+        tools:layout="@layout/fragment_parking_lot_details" >
+        <action
+            android:id="@+id/action_parkingLotDetailsFragment_pop"
+            app:popUpTo="@id/parkingLotDetailsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
