@@ -1,11 +1,11 @@
-package com.sultanseidov.parkingapp.sharedPreference;
+package com.sultanseidov.parkingapp.util.sharedPreference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import static com.sultanseidov.parkingapp.sharedPreference.PreferencesUtility.LOGGED_IN_PREF;
-import static com.sultanseidov.parkingapp.sharedPreference.PreferencesUtility.USERMODEL;
+import static com.sultanseidov.parkingapp.util.sharedPreference.PreferencesUtility.LOGGED_IN_PREF;
+import static com.sultanseidov.parkingapp.util.sharedPreference.PreferencesUtility.USERMODEL;
 
 public class SaveSharedPreference {
 

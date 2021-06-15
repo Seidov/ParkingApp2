@@ -1,4 +1,4 @@
-package com.sultanseidov.parkingapp.sharedPreference;
+package com.sultanseidov.parkingapp.util.sharedPreference;
 
 public class PreferencesUtility {
 

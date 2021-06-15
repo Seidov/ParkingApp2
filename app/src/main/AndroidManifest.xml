@@ -13,11 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ParkingApp">
-
-        <activity android:name=".View.activity.RegisterActivity"/>
-        <activity android:name=".View.activity.MainActivity" />
+        <activity android:name=".view.activity.MapsActivity"></activity>
+        <activity android:name=".view.activity.RegisterActivity" />
+        <activity android:name=".view.activity.MainActivity" />
         <activity
-            android:name=".View.activity.SplashScreenActivity"
+            android:name=".view.activity.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Splash"
             tools:ignore="LockedOrientationActivity">

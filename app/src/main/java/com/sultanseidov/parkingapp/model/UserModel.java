@@ -3,7 +3,7 @@ package com.sultanseidov.parkingapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class User {
+public class UserModel {
     @SerializedName("name")
     private String userName;
 
@@ -22,10 +22,10 @@ public class User {
     @SerializedName("password")
     private String password;
 
-    public User() {
+    public UserModel() {
     }
 
-    public User(String userName, String userEmail, String userPhoneNumber, String userVehicleNumber, String userVehicleType, String password) {
+    public UserModel(String userName, String userEmail, String userPhoneNumber, String userVehicleNumber, String userVehicleType, String password) {
         this.userName = userName;
         this.userEmail = userEmail;
         this.userPhoneNumber = userPhoneNumber;

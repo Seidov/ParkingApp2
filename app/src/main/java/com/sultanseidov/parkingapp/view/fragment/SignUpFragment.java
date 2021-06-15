@@ -1,4 +1,4 @@
-package com.sultanseidov.parkingapp.View.fragment;
+package com.sultanseidov.parkingapp.view.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,10 +10,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
+import com.google.gson.Gson;
 import com.sultanseidov.parkingapp.R;
-import com.sultanseidov.parkingapp.model.User;
-import com.sultanseidov.parkingapp.sharedPreference.SaveSharedPreference;
+import com.sultanseidov.parkingapp.model.UserModel;
+import com.sultanseidov.parkingapp.util.sharedPreference.SaveSharedPreference;
 import com.sultanseidov.parkingapp.util.Util;
 
 import org.jetbrains.annotations.NotNull;
@@ -97,22 +99,26 @@ public class SignUpFragment extends Fragment {
 
         textViewSignUp.setOnClickListener(v -> {
 
-            /*
+
             if (checkAllPageFields()) {
-                User userModel = new User();
+                UserModel userModel = new UserModel();
                 userModel.setUserName(textViewUserEmail.getText().toString());
                 userModel.setUserEmail(textViewUserEmail.getText().toString());
                 userModel.setPassword(textViewUserPassord.getText().toString());
                 userModel.setUserPhoneNumber(textViewUserPhoneNumber.getText().toString());
                 userModel.setUserVehicleNumber(textViewVehileNumber.getText().toString());
                 userModel.setUserVehicleType(textViewVehicleType.getText().toString());
-                util.setUserModel(view.getContext(), userModel);
+
+                Gson gson = new Gson();
+
                 SaveSharedPreference.setLoggedIn(view.getContext(), true);
+                SaveSharedPreference.setUser(requireContext(), gson.toJson(userModel));
                 Toast.makeText(view.getContext(), "Yeni kullanici basariylakaydedildi", Toast.LENGTH_SHORT).show();
+
+                Navigation.findNavController(v).navigate(R.id.action_signUpFragment_pop);
 
             }
 
-             */
 
             Toast.makeText(view.getContext(), "Yeni kullanici basariylakaydedildi", Toast.LENGTH_SHORT).show();
 

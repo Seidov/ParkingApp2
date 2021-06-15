@@ -1,5 +1,6 @@
-package com.sultanseidov.parkingapp.View.fragment;
+package com.sultanseidov.parkingapp.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.google.gson.Gson;
 import com.sultanseidov.parkingapp.R;
+import com.sultanseidov.parkingapp.view.activity.MainActivity;
+import com.sultanseidov.parkingapp.model.UserModel;
+import com.sultanseidov.parkingapp.util.sharedPreference.SaveSharedPreference;
 import com.sultanseidov.parkingapp.util.Util;
 
 import org.jetbrains.annotations.NotNull;
@@ -49,34 +54,41 @@ public class SignInFragment extends Fragment {
 
         textViewSignIn.setOnClickListener(v -> {
 
-            /*
+
             if (checkAllPageFields(textViewUserName,textViewUserPassword)){
+                Gson gson=new Gson();
 
                 try {
 
-                    User user=util.getUserModel(view.getContext());
+                    //User user=util.getUserModel(view.getContext());
+                    UserModel user=gson.fromJson(SaveSharedPreference.getUser(requireContext()), UserModel.class);
                     if (user!=null){
 
-                        if (user.getUserName().toString().equals(textViewUserName.toString()) &&
-                                user.getPassword().toString().equals(textViewUserPassword.toString())){
+                        if (user.getUserName().toString().equals(textViewUserName.getText().toString()) &&
+                                user.getPassword().toString().equals(textViewUserPassword.getText().toString())){
 
                             Toast.makeText(view.getContext(), "Giris basarili", Toast.LENGTH_SHORT).show();
+                            SaveSharedPreference.setLoggedIn(view.getContext(), true);
+
+
+
+                            Intent intent = new Intent(getActivity(), MainActivity.class);
+                            startActivity(intent);
+                            requireActivity().finish();
                         }
 
                     }else {
                         Toast.makeText(view.getContext(), "Kayıtlı kullanıcı bulunamadı!", Toast.LENGTH_SHORT).show();
                     }
 
-                    SaveSharedPreference.setLoggedIn(view.getContext(), true);
 
                 }catch (Exception e){
                     Toast.makeText(view.getContext(), ""+e, Toast.LENGTH_SHORT).show();
                 }
             }
 
-             */
 
-            Toast.makeText(view.getContext(), "Giris basarili", Toast.LENGTH_SHORT).show();
+
 
 
         });

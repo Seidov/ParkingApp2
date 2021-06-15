@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.sultanseidov.parkingapp.View.fragment.SignInFragment"
+        android:name="com.sultanseidov.parkingapp.view.fragment.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -16,7 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.sultanseidov.parkingapp.View.fragment.SignUpFragment"
+        android:name="com.sultanseidov.parkingapp.view.fragment.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_pop"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

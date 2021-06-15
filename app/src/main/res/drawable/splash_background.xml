@@ -4,7 +4,7 @@
     <item android:drawable="@drawable/bg_gr_splash"/>
 
     <item android:gravity="fill"
-        android:drawable="@drawable/ic_rizigo_splash_2_1"/>
+        android:drawable="@drawable/ic_splash_context"/>
 
     <item android:gravity="center_vertical|center_horizontal"
         android:drawable="@drawable/ic_parking_1"/>

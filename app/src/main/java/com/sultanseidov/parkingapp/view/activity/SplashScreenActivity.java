@@ -1,4 +1,4 @@
-package com.sultanseidov.parkingapp.View.activity;
+package com.sultanseidov.parkingapp.view.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Toast;
 
-import com.sultanseidov.parkingapp.View.activity.RegisterActivity;
+import com.sultanseidov.parkingapp.util.sharedPreference.SaveSharedPreference;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -42,6 +42,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         if (isNetworkAvailable()){
             handler.postDelayed(runnable,2000);
+            isLogged();
         }else {
             Toast.makeText(this, "Lütfen bağlantı ayarlarınızı kontrol edip tekrar deneyiniz.", Toast.LENGTH_LONG).show();
             handler.postDelayed(runnable2,5000);
@@ -68,4 +69,17 @@ public class SplashScreenActivity extends AppCompatActivity {
         }
         return false;
     }
+
+    public void isLogged() {
+        if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
 }
